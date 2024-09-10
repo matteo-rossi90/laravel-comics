@@ -1,6 +1,12 @@
-{{-- <footer class="my-5 text-center"> --}}
-    {{-- <p>by UdU</p> --}}
-{{-- </footer> --}}
+@php
+
+$mainMenu = config('menu.main_menu');
+$shop = config('menu.shopItems');
+$dc_items = config('menu.dcItems');
+$sites = config('menu.siteItems');
+$follow = config('menu.socialItems');
+
+@endphp
 
     <!-- sezione della parte superiore del footer -->
     <section>
@@ -20,9 +26,11 @@
 
                             <!-- inserimento dinamico del menu DC Comics -->
                             <ul>
-                                <li>
-                                    <a href="#">item</a>
-                                </li>
+                                @foreach ($mainMenu as $menu )
+                                    <li>
+                                        <a href="{{ route($menu['name'])}}">{{ $menu['text']}}</a>
+                                    </li>
+                                @endforeach
                             </ul>
 
                         </nav>
@@ -31,9 +39,13 @@
 
                             <!-- inserimento dinamico del menu Shop -->
                             <ul>
-                                <li>
-                                    <a href="#">item</a>
-                                </li>
+
+                               @foreach ($shop as $item )
+                                    <li>
+                                    <a href="#">{{ $item['text']}}</a>
+                                    </li>
+                                @endforeach
+
                             </ul>
                         </nav>
                     </div>
@@ -46,9 +58,11 @@
                             <!-- inserimento dinamico del menu DC -->
                             <ul>
 
-                                <li>
-                                    <a href="#">item</a>
-                                </li>
+                                @foreach ($dc_items as $dc )
+                                    <li>
+                                        <a href="#">{{ $dc['text']}}</a>
+                                    </li>
+                                @endforeach
 
                             </ul>
 
@@ -62,9 +76,12 @@
 
                             <!-- inserimento dinamico del menu Sites -->
                             <ul>
-                                <li>
-                                    <a href="#">item</a>
-                                </li>
+
+                                @foreach ($sites as $siti )
+                                    <li>
+                                    <a href="#">{{ $siti['text']}}</a>
+                                    </li>
+                                @endforeach
 
 
                             </ul>
@@ -96,11 +113,14 @@
                 <!-- inserimento dinamico in DOM dei social -->
                 <nav>
                     <ul>
-                        <li>
-                            <a href="#">
-                                <img src="" :alt="">
-                            </a>
-                        </li>
+                        @foreach ( $follow as $social )
+                            <li>
+                                <a href="#">
+                                    <img src="{{ $social['image'] }}" :alt="{{$social['text']}}">
+                                </a>
+                            </li>
+
+                        @endforeach
                     </ul>
                 </nav>
             </div>

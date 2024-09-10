@@ -2,21 +2,23 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="section-color">
 
-        <!-- contenitore del jumbotron -->
-        <div id="jumbotron"></div>
-
-
-    </section>
 
     <section>
-        <h1>{{ $title }}</h1>
-        <p>
-            {{ $text }}
-        </p>
+        <div class="container">
+
+            <div class="box">
+                <h1 class="text-margin">{{ $title }}</h1>
+                <p>
+                    {{ $text }}
+                </p>
+
+            </div>
+
+        </div>
 
     </section>
+
 
 
 @endsection
