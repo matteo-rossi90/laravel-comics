@@ -9,12 +9,9 @@
     <nav>
         <ul>
             <li>
-                <a href="#" class="">item</a>
-                <a href="#" class="">item</a>
-                <a href="#" class="">item</a>
-                <a href="#" class="">item</a>
-                <a href="#" class="">item</a>
-                <a href="#" class="">item</a>
+                <a href="{{ route('home') }}" class="">Home</a>
+                <a href="{{ route('comics') }}" class="">Comics</a>
+                <a href="{{ route('contacts') }}" class="">Contatti</a>
             </li>
 
         </ul>
