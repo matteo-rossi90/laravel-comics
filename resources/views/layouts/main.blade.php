@@ -12,11 +12,11 @@
 </head>
 <body>
 
-    @include('partials.navbar')
-
-    @yield('hero')
+    @include('partials.header')
 
     @yield('content')
+
+    @include('partials.merch')
 
     @include('partials.footer')
 

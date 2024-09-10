@@ -1,0 +1,25 @@
+//regole generali
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+
+a {
+    color: black;
+}
+
+
+//layout
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.section-color {
+    background-color: black;
+}
